@@ -1,0 +1,39 @@
+<%- include ("partials/header") %>
+
+
+<div class="ui container main text">
+    <a href="/blogs/<%= foundBlog._id %>" class="ui button"><i class="angle left icon" style="font-size: 1em;"></i> Go
+        Back</a>
+</div>
+<div class="ui container main text segment newpost" style="margin: 2rem 0; padding: 2rem;">
+    <form action="/blogs/<%= foundBlog._id %>?_method=PUT" method="POST" class="ui form">
+        <h4 class="ui huge header"
+            style="text-align: center; margin-bottom: 2rem; border-bottom: 1px solid #1B1C1D; padding-bottom: 0.5rem;">
+            Edit <em style="color: darkgray;"><%= foundBlog.title %></em> Blog Post
+        </h4>
+        <div class="ui field">
+            <label for="blog[title]">Enter your blog post title here:</label>
+            <input type="text" name="blog[title]" placeholder="Title of your blog post..."
+                value="<%= foundBlog.title %>">
+        </div>
+        <div class="ui field">
+            <label for="blog[image]">Enter the Image URL here:</label>
+            <input value="<%= foundBlog.image %>" type="text" name="blog[image]"
+                placeholder="Image URL for your post...">
+        </div>
+        <div class="ui field">
+            <label for="blog[body]">Type in your blog content here:</label>
+            <!-- <textarea type="text" name="blog[body]" placeholder="Type your blog post here..."> -->
+            <textarea name="blog[body]" cols="30" rows="10" placeholder="Type your blog post here..."><%= foundBlog.body %>
+            </textarea>
+        </div>
+        <div class="ui field" style="text-align: center;">
+            <button class="ui button secondary">
+                <i class="paper plane icon"></i> SUBMIT</button>
+        </div>
+    </form>
+</div>
+
+<div class="spacer">&nbsp;</div>
+
+<%- include ("partials/footer") %>

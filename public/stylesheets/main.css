@@ -1,0 +1,29 @@
+body {
+    position: relative;
+}
+
+i.ethereum {
+    font-size: 2em !important;
+}
+
+body{
+    background: #eee;
+}
+
+div.ui.inverted.fixed.menu {
+    padding: 0.1rem 0;
+}
+
+.spacer {
+    margin-top:8rem;
+}
+
+
+.newpost {
+    margin-top: 2rem !important;
+}
+
+p.copyright {
+    display: block;
+    margin: 0 auto !important; 
+}

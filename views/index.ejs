@@ -1,0 +1,29 @@
+<%- include ("partials/header") %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Recent Blog Posts</div>
+
+    <div class="ui top attached segment">
+        <div class="ui divided items" style="padding-bottom: 2rem; padding-top: 1rem;">
+            <% blogPosts.forEach(post => { %>
+            <div class="item" style="padding: 1rem;">
+                <div class="image">
+                    <img src="<%= post.image %>" width="auto" height="400px" alt="">
+                </div>
+                <div class="content">
+                    <a class="header" href="/blogs/<%= post.id %>" style="margin-top: 0.5rem;"><%= post.title %></a>
+                    <p style="margin-bottom: 1rem;"><em>Created on <%= post.created.toDateString() %></em></p>
+                    <p class="lead" style="margin-bottom: 1.5rem;"><%= post.body.substring(0, 100) %>...</p>
+                    <a href="/blogs/<%= post.id %>"><button class="ui button secondary"><i class="book icon"></i>Read
+                            More</button></a>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 6rem !important;">
+    <%- include ("partials/footer") %>
+    &nbsp;
+</div>

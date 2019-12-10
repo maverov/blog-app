@@ -1,0 +1,36 @@
+<%- include ("partials/header") %>
+
+<div class="ui main text container segment" style="padding: 2rem;">
+    <div class="ui huge header"><%= blogPost.title %></div>
+
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" height="350px" width="auto" src="<%= blogPost.image %>"
+                style="margin-bottom: 1rem;" alt="Blog Post Image">
+            <div class="content">
+                <span class=""><em>Created on <%= blogPost.created.toDateString() %></em></span>
+            </div>
+
+            <div class="description">
+                <p class="lead" style="margin-top: 2rem;">
+                    <%= blogPost.body %>
+                </p>
+                <a href="/blogs" class="ui button"><i class="angle left icon" style="font-size: 1em;"></i> Go
+                    Back</a>
+                <a href="/blogs/<%= blogPost._id %>/edit" class="ui button positive" style=" margin-left: 5px;"><i
+                        class="edit icon" style="font-size: 1em;"></i> Edit
+                    Post</a>
+                <form action="/blogs/<%= blogPost._id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button class="ui button negative" style=" margin-left: 5px;"><i class="recycle icon"
+                            style="font-size: 1em;"></i> Delete
+                        Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 6rem !important;">
+    <%- include ("partials/footer") %>
+    &nbsp;
+</div>
