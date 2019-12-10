@@ -1,5 +1,5 @@
 # blog-app
-Personal blog app with custom built CMS.
+A simple blog web app with custom built CMS (using Node.js, MongoDB, and EJS).
 
 Technologies used: JavaScript, Node, MongoDB, HTML/CSS
 Tools: EJS, Express.js, Mongoose, body-parser, validator, Semantic UI, nodemon, method-override
